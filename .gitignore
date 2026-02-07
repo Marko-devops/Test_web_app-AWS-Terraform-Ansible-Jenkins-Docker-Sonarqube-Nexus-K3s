@@ -1,0 +1,4 @@
+# SSH keys (DO NOT COMMIT)
+keys/*
+!keys/*.pub
+
