@@ -9,7 +9,7 @@ resource "aws_instance" "jenkins" {
   tags = { Name = "Jenkins" }
 }
 
-resource "aws_instance" "sonarqube" {
+resource "aws_instance" "sonar" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.medium"
   key_name      = aws_key_pair.sonar.key_name

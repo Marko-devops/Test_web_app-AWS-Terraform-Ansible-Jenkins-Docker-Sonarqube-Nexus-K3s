@@ -17,4 +17,3 @@ resource "aws_key_pair" "ansible" {
   key_name   = "ansible_key"
   public_key = file("${path.module}/keys/ansible_key.pub")
 }
-
