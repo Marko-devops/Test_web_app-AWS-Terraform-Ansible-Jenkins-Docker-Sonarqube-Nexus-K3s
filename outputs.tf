@@ -1,15 +1,8 @@
-output "jenkins_ip" {
-  value = aws_instance.jenkins.public_ip
-}
-
-output "sonarqube_ip" {
-  value = aws_instance.sonarqube.public_ip
-}
-
-output "nexus_ip" {
-  value = aws_instance.nexus.public_ip
-}
-
-output "ansible_ip" {
-  value = aws_instance.ansible.public_ip
+output "public_ips" {
+  value = {
+    jenkins  = aws_instance.jenkins.public_ip
+    sonar    = aws_instance.sonarqube.public_ip
+    nexus    = aws_instance.nexus.public_ip
+    ansible  = aws_instance.ansible.public_ip
+  }
 }
