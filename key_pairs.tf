@@ -1,19 +1,20 @@
-resource "aws_key_pair" "jenkins_key" {
+resource "aws_key_pair" "jenkins" {
   key_name   = "jenkins_key"
-  public_key = file("/keys/jenkins_key.pub")
+  public_key = file("${path.module}/keys/jenkins_key.pub")
 }
 
-resource "aws_key_pair" "sonar_key" {
+resource "aws_key_pair" "sonar" {
   key_name   = "sonar_key"
-  public_key = file("/keys/sonar_key.pub")
+  public_key = file("${path.module}/keys/sonar_key.pub")
 }
 
-resource "aws_key_pair" "nexus_key" {
+resource "aws_key_pair" "nexus" {
   key_name   = "nexus_key"
-  public_key = file("/keys/nexus_key.pub")
+  public_key = file("${path.module}/keys/nexus_key.pub")
 }
 
-resource "aws_key_pair" "ansible_key" {
+resource "aws_key_pair" "ansible" {
   key_name   = "ansible_key"
-  public_key = file("/keys/ansible_key.pub")
+  public_key = file("${path.module}/keys/ansible_key.pub")
 }
+
