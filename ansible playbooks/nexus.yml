@@ -1,0 +1,38 @@
+---
+- name: Install Nexus with Docker
+  hosts: nexus
+  become: true
+
+  tasks:
+
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: Pull Nexus LTS image
+      docker_image:
+        name: sonatype/nexus3
+        tag: latest
+        source: pull
+
+    - name: Run Nexus container
+      docker_container:
+        name: nexus
+        image: sonatype/nexus3:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "8081:8081"
+

@@ -1,0 +1,38 @@
+---
+- name: Install SonarQube with Docker
+  hosts: sonar
+  become: true
+
+  tasks:
+
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: Pull SonarQube LTS image
+      docker_image:
+        name: sonarqube
+        tag: lts
+        source: pull
+
+    - name: Run SonarQube container
+      docker_container:
+        name: sonarqube
+        image: sonarqube:lts
+        state: started
+        restart_policy: always
+        ports:
+          - "9000:9000"
+
