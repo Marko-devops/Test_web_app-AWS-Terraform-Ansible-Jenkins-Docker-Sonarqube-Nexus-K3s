@@ -8,4 +8,4 @@ Once the application passes through the Jenkins pipeline and SonarQube tests, th
 From there (to intentionally complicate the project), K3s will pull the Docker image onto an auxiliary computer that I connected to my laptop via a router, on which I deleted Windows, installed Linux Ubuntu, and assigned a static IP address configured via Netplan.
 When K3s pulls the Docker image from Nexus, I will access the worker’s IP address to check if the application works.
 Since the application is simple, accessing the worker’s IP through a browser should display “WELL DONE.”
-The project started on 09.02.2026 and will be finished in a few days.
+The project started on 13.02.2026 and will be finished in a few days.
