@@ -1,0 +1,5 @@
+1. Napravljene Ec2 za AWS u terraformu: Ansible, Jenkins, SonarQube, Nexus
+2. U .gitignore dodati osetljivi podaci kao sto su privatni i public kljcevi, varijable i ostalo, kako ne bi zavrsili na githubu iz bezbednosnih razloga.
+3. Pokrenut terraform apply i kreirane Ec2 na AWS
+4. Pristup Ansible Ec2 i uradjena konekcija sa ostale 3 Ec2
+5. Instalirani alati na Jenkins Ec2, Sonar Ec2, Nexus Ec2, a sve preko Ansible Ec2, odnosno Ansible playbook na Ec2 i to preko Docker images lts.
